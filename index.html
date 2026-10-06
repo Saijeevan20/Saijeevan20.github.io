@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Saijeevan Thondamanati — Web Developer</title>
+<style>
+:root{--bg:#f7f8fb;--card:#fff;--text:#1b2030;--muted:#5d6577;--accent:#4f46e5;--accent2:#0ea5e9;--line:#e3e6ee;--shadow:0 6px 24px rgba(30,40,80,.08);box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e1220;--card:#171c2e;--text:#eef0f7;--muted:#9aa3ba;--accent:#818cf8;--accent2:#38bdf8;--line:#262d45;--shadow:0 6px 24px rgba(0,0,0,.35)}}
+:root[data-theme="dark"]{--bg:#0e1220;--card:#171c2e;--text:#eef0f7;--muted:#9aa3ba;--accent:#818cf8;--accent2:#38bdf8;--line:#262d45;--shadow:0 6px 24px rgba(0,0,0,.35)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(72px + env(safe-area-inset-top,0px))}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.65 Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;transition:background .3s,color .3s}
+a{color:var(--accent);text-decoration:none}
+.wrap{max-width:1000px;margin:0 auto;padding:0 20px}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:color-mix(in srgb,var(--bg) 85%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav{display:flex;align-items:center;justify-content:space-between;height:60px;gap:12px}
+.logo{font-weight:700;letter-spacing:.3px;color:var(--text)}
+.links{display:flex;gap:18px;overflow-x:auto;scrollbar-width:none}
+.links a{color:var(--muted);font-size:14px;white-space:nowrap}
+.links a:hover{color:var(--accent)}
+#theme{border:1px solid var(--line);background:var(--card);color:var(--text);border-radius:999px;width:38px;height:38px;font-size:17px;cursor:pointer;flex:none}
+section{padding:72px 0}
+h2{font-size:28px;margin:0 0 28px;display:flex;align-items:center;gap:12px}
+h2::after{content:"";height:2px;flex:1;background:linear-gradient(90deg,var(--accent),transparent);opacity:.4}
+.hero{padding:88px 0 64px}
+.hero .hi{color:var(--accent);font-weight:600;margin:0}
+.hero h1{font-size:clamp(34px,7vw,60px);line-height:1.1;margin:8px 0 10px}
+.hero .role{font-size:clamp(17px,3vw,22px);color:var(--muted);margin:0 0 16px}
+.grad{background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p.sum{max-width:620px;color:var(--muted);font-size:18px}
+.btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+.btn{padding:11px 22px;border-radius:10px;font-weight:600;border:1px solid var(--accent);transition:transform .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn.p{background:var(--accent);color:#fff}
+.about p{max-width:760px;color:var(--muted);font-size:17px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.chip{padding:6px 14px;border:1px solid var(--line);border-radius:999px;background:var(--card);font-size:14px}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px;box-shadow:var(--shadow);transition:transform .25s}
+.card:hover{transform:translateY(-4px)}
+.card h3{margin:0 0 6px;font-size:18px}
+.card .cat{font-size:12px;text-transform:uppercase;letter-spacing:1px;color:var(--accent);font-weight:700;margin-bottom:10px}
+.card p{margin:0;color:var(--muted);font-size:15px}
+.card ul{margin:8px 0 0;padding-left:18px;color:var(--muted);font-size:15px}
+.ph{display:inline-block;margin-top:12px;font-size:13px;color:var(--accent2);font-family:ui-monospace,Menlo,monospace}
+.timeline{position:relative;margin-left:8px;padding-left:28px;border-left:2px solid var(--line)}
+.job{position:relative;margin-bottom:28px}
+.job::before{content:"";position:absolute;left:-37px;top:8px;width:14px;height:14px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px var(--bg)}
+.job .when{font-size:13px;color:var(--accent);font-weight:600}
+.job h3{margin:2px 0}
+.job .co{color:var(--muted);margin:0 0 10px}
+.job ul{margin:0;padding-left:18px;color:var(--muted)}
+.job li{margin-bottom:4px}
+.key{margin-top:10px;font-size:14px;color:var(--text)}
+.key b{color:var(--accent)}
+.contact{text-align:center}
+.contact h2{justify-content:center}
+.contact h2::after{display:none}
+.clist{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));max-width:760px;margin:0 auto}
+.clist .card{text-align:center;padding:18px;word-break:break-word}
+.clist small{display:block;color:var(--muted);text-transform:uppercase;letter-spacing:1px;font-size:11px;margin-bottom:4px}
+footer{padding:28px 0;text-align:center;color:var(--muted);font-size:14px;border-top:1px solid var(--line)}
+.rv{opacity:0;transform:translateY(22px);transition:opacity .7s,transform .7s}
+.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+@media (max-width:640px){.links{display:none}section{padding:56px 0}}
+</style>
+</head>
+<body>
+<header><div class="wrap"><nav>
+<a class="logo" href="#top">Saijeevan T.</a>
+<div class="links"><a href="#about">About</a><a href="#skills">Skills</a><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#education">Education</a><a href="#contact">Contact</a></div>
+<button id="theme" aria-label="Toggle light and dark mode">🌙</button>
+</nav></div></header>
+
+<main>
+<section class="hero" id="top"><div class="wrap">
+<p class="hi rv">Hello, I'm</p>
+<h1 class="rv"><span class="grad">Saijeevan Thondamanati</span></h1>
+<p class="role rv">Web Developer · Frontend Developer · WordPress Developer</p>
+<p class="sum rv">Building responsive, high-performance websites and managing production servers, with 3+ years of experience.</p>
+<div class="btns rv"><a class="btn p" href="#projects">View projects</a><a class="btn" href="#contact">Get in touch</a></div>
+</div></section>
+
+<section class="about" id="about"><div class="wrap">
+<h2 class="rv">About me</h2>
+<p class="rv">I'm a results-driven web developer based in Bangalore, India, with 3+ years of experience building responsive, high-performance websites and maintaining enterprise sites. I work with HTML, CSS, JavaScript, WordPress, PHP and MySQL to deliver scalable web solutions.</p>
+<p class="rv">My focus areas are UI development, responsive design, performance optimization and application testing. I collaborate with cross-functional teams to deliver secure, efficient and user-friendly digital platforms.</p>
+<div class="chips rv"><span class="chip">Responsive Website Development</span><span class="chip">Performance Optimization</span><span class="chip">Web Application Testing</span><span class="chip">Server &amp; Hosting Management</span><span class="chip">Cross-Browser Compatibility</span></div>
+</div></section>
+
+<section id="skills"><div class="wrap">
+<h2 class="rv">Skills</h2>
+<div class="grid">
+<div class="card rv"><div class="cat">Frontend</div><p>HTML5, CSS3, Bootstrap, JavaScript, React.js</p></div>
+<div class="card rv"><div class="cat">Backend</div><p>PHP, MySQL</p></div>
+<div class="card rv"><div class="cat">CMS &amp; Platforms</div><p>WordPress, Salesforce CRM</p></div>
+<div class="card rv"><div class="cat">Testing &amp; QA</div><p>API Testing, Functional Testing, Unit Testing, Mobile App Testing</p></div>
+<div class="card rv"><div class="cat">Tools &amp; Technologies</div><p>Adobe Photoshop, Microsoft Azure</p></div>
+<div class="card rv"><div class="cat">Other</div><p>Responsive Web Design, Website Optimization, Server Management, UI Implementation</p></div>
+</div></div></section>
+
+<section id="experience"><div class="wrap">
+<h2 class="rv">Work experience</h2>
+<div class="timeline">
+<div class="job rv"><span class="when">Aug 2023 – Feb 2025</span><h3>Web Developer</h3><p class="co">Suits Care India Pvt Ltd · Guntur</p>
+<ul><li>Developed and maintained responsive websites and web applications using HTML, CSS, JavaScript and WordPress.</li><li>Managed website hosting, server configurations and WordPress dashboards for multiple internal projects.</li><li>Implemented mobile-first responsive design improving accessibility across devices.</li><li>Tested and validated internal dashboards and mobile applications to ensure system stability.</li><li>Optimized performance through code improvements, caching strategies and security enhancements.</li><li>Collaborated with design and development teams on UI enhancements and new features.</li></ul>
+<p class="key"><b>Key contributions:</b> Maintained multiple production websites and internal systems; improved website performance and usability through optimization techniques.</p></div>
+<div class="job rv"><span class="when">Apr 2022 – Jul 2023</span><h3>Software Developer</h3><p class="co">Sagar Software Solutions Pvt Ltd · Tirupati</p>
+<ul><li>Developed landing pages and dynamic websites using HTML, CSS, JavaScript and Bootstrap.</li><li>Assisted in implementing UI/UX designs and responsive layouts for client websites.</li><li>Participated in testing, debugging and deployment of web applications.</li><li>Worked closely with designers and developers to deliver interactive, visually engaging pages.</li></ul>
+<p class="key"><b>Key contributions:</b> Contributed to the development and deployment of multiple responsive client websites.</p></div>
+</div></div></section>
+
+<section id="projects"><div class="wrap">
+<h2 class="rv">Projects</h2>
+<div class="grid">
+<div class="card rv"><h3>Suits Care Network</h3><p>Internal project websites with managed WordPress servers and dashboards, plus mobile app and dashboard testing.</p><a class="ph" href="https://suits.life/" target="_blank" rel="noopener">suits.life ↗</a></div>
+<div class="card rv"><h3>DKSSR Portfolio Website</h3><p>Responsive portfolio website built with HTML, CSS and JavaScript, with layout improvements and feature updates.</p><a class="ph" href="https://drkssr.com/" target="_blank" rel="noopener">drkssr.com ↗</a></div>
+<div class="card rv"><h3>In Case of Emergency Website</h3><p>WordPress landing page built with Elementor in 10 days, fully mobile responsive.</p><a class="ph" href="https://ice.suits.life/" target="_blank" rel="noopener">ice.suits.life ↗</a></div>
+<div class="card rv"><h3>SaveYO Platform</h3><p>Multi-page responsive website using HTML, CSS, Bootstrap and JavaScript, designed to support blood donation awareness and requirements.</p><a class="ph" href="https://saveyo.org/" target="_blank" rel="noopener">saveyo.org ↗</a></div>
+<div class="card rv"><h3>Intensive Diabetic Care Website</h3><p>Responsive healthcare website aligned with client requirements.</p><a class="ph" href="http://idc.suits.life/" target="_blank" rel="noopener">idc.suits.life ↗</a></div>
+</div></div></section>
+
+<section id="education"><div class="wrap">
+<h2 class="rv">Education</h2>
+<div class="grid">
+<div class="card rv"><div class="cat">2015 – 2019</div><h3>B.Tech, Electronics &amp; Communication Engineering</h3><p>Srikalahasteeswara Institute of Technology (SKIT), JNTU Ananthapur. Graduated with Distinction – 70%.</p></div>
+<div class="card rv"><div class="cat">Trainings</div><ul><li><b>Identity &amp; Access Management (IDAM)</b>, WinGig IT Consulting Services, 2025: SailPoint IIQ, Saviynt IGA, Oracle Identity Management Suite</li><li><b>Salesforce CRM</b>, E-Care Technologies, Bangalore, 2019</li></ul></div>
+</div></div></section>
+
+<section class="contact" id="contact"><div class="wrap">
+<h2 class="rv">Contact</h2>
+<div class="clist">
+<a class="card rv" href="mailto:saijeevant@gmail.com"><small>Email</small>saijeevant@gmail.com</a>
+<a class="card rv" href="tel:+917989770461"><small>Phone</small>+91 7989770461</a>
+<a class="card rv" href="https://www.linkedin.com/in/saijeevan-thondamanati-737399195" target="_blank" rel="noopener"><small>LinkedIn</small>saijeevan-thondamanati</a>
+<a class="card rv" href="https://github.com/Saijeevan20" target="_blank" rel="noopener"><small>GitHub</small>Saijeevan20</a>
+</div>
+<p class="rv" style="color:var(--muted);margin-top:22px">Bangalore, India</p>
+</div></section>
+</main>
+<footer>© <span id="y"></span> Saijeevan Thondamanati</footer>
+
+<script>
+(function(){
+var root=document.documentElement,btn=document.getElementById('theme');
+function cur(){var t=root.getAttribute('data-theme');if(t)return t;return matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light'}
+function set(t){root.setAttribute('data-theme',t);btn.textContent=t==='dark'?'☀️':'🌙'}
+var saved=null;try{saved=localStorage.getItem('theme')}catch(e){}
+set(saved||cur());
+btn.onclick=function(){var t=cur()==='dark'?'light':'dark';set(t);try{localStorage.setItem('theme',t)}catch(e){}};
+document.getElementById('y').textContent=new Date().getFullYear();
+var els=document.querySelectorAll('.rv');
+if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});els.forEach(function(el){io.observe(el)})}else{els.forEach(function(el){el.classList.add('in')})}
+})();
+</script>
+</body>
+</html>
