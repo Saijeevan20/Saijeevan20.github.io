@@ -14,7 +14,7 @@ body{margin:0;background:var(--bg);color:var(--text);font:16px/1.65 Inter,system
 a{color:var(--accent);text-decoration:none}
 .wrap{max-width:1000px;margin:0 auto;padding:0 20px}
 header{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:color-mix(in srgb,var(--bg) 85%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-nav{display:flex;align-items:center;justify-content:space-between;height:60px;gap:12px}
+nav{position:relative;display:flex;align-items:center;justify-content:space-between;height:60px;gap:12px}
 .logo{font-weight:700;letter-spacing:.3px;color:var(--text)}
 .links{display:flex;gap:18px;overflow-x:auto;scrollbar-width:none}
 .links a{color:var(--muted);font-size:14px;white-space:nowrap}
@@ -64,14 +64,32 @@ footer{padding:28px 0;text-align:center;color:var(--muted);font-size:14px;border
 .rv{opacity:0;transform:translateY(22px);transition:opacity .7s,transform .7s}
 .rv.in{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
-@media (max-width:640px){.links{display:none}section{padding:56px 0}}
+.tools{display:flex;gap:8px;align-items:center}
+#burger{display:none;border:1px solid var(--line);background:var(--card);color:var(--text);border-radius:10px;width:40px;height:38px;cursor:pointer;flex:none;padding:0;align-items:center;justify-content:center;flex-direction:column;gap:5px}
+#burger span{display:block;width:18px;height:2px;background:currentColor;border-radius:2px;transition:transform .3s,opacity .3s}
+#burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+#burger.open span:nth-child(2){opacity:0}
+#burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+@media (max-width:760px){
+#burger{display:flex}
+.links{position:absolute;left:0;right:0;top:100%;flex-direction:column;gap:0;background:var(--bg);border-bottom:1px solid var(--line);box-shadow:var(--shadow);max-height:0;overflow:hidden;visibility:hidden;transition:max-height .35s ease,visibility .35s}
+.links.open{max-height:360px;visibility:visible}
+.links a{font-size:16px;padding:14px 24px;border-top:1px solid var(--line);color:var(--text)}
+section{padding:52px 0}
+.hero{padding:56px 0 40px}
+h2{font-size:24px;margin-bottom:22px}
+.hero .btns .btn{flex:1;text-align:center}
+.timeline{padding-left:22px}
+.job::before{left:-31px}
+.wrap{padding:0 16px}
+}
 </style>
 </head>
 <body>
 <header><div class="wrap"><nav>
 <a class="logo" href="#top">Saijeevan T.</a>
-<div class="links"><a href="#about">About</a><a href="#skills">Skills</a><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#education">Education</a><a href="#contact">Contact</a></div>
-<button id="theme" aria-label="Toggle light and dark mode">🌙</button>
+<div class="links" id="menu"><a href="#about">About</a><a href="#skills">Skills</a><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#education">Education</a><a href="#contact">Contact</a></div>
+<div class="tools"><button id="theme" aria-label="Toggle light and dark mode">🌙</button><button id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="menu"><span></span><span></span><span></span></button></div>
 </nav></div></header>
 
 <main>
@@ -150,6 +168,13 @@ function set(t){root.setAttribute('data-theme',t);btn.textContent=t==='dark'?'�
 var saved=null;try{saved=localStorage.getItem('theme')}catch(e){}
 set(saved||cur());
 btn.onclick=function(){var t=cur()==='dark'?'light':'dark';set(t);try{localStorage.setItem('theme',t)}catch(e){}};
+var bg=document.getElementById('burger'),mn=document.getElementById('menu');
+function tog(o){mn.classList.toggle('open',o);bg.classList.toggle('open',o);bg.setAttribute('aria-expanded',o);bg.setAttribute('aria-label',o?'Close menu':'Open menu')}
+bg.onclick=function(){tog(!mn.classList.contains('open'))};
+mn.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){tog(false)})});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')tog(false)});
+document.addEventListener('click',function(e){if(!e.target.closest('header'))tog(false)});
+addEventListener('resize',function(){if(innerWidth>760)tog(false)});
 document.getElementById('y').textContent=new Date().getFullYear();
 var els=document.querySelectorAll('.rv');
 if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});els.forEach(function(el){io.observe(el)})}else{els.forEach(function(el){el.classList.add('in')})}
