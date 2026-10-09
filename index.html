@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="color-scheme" content="light">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Saijeevan Thondamanati — Web Developer with 3+ years of experience in responsive websites, WordPress and server management. Bangalore, India.">
+<title>Saijeevan Thondamanati — Web Developer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#0f1f33;--ink2:#17304b;--paper:#f6f8fb;--white:#fff;--text:#1e2a3b;--muted:#566377;--teal:#0f8b8d;--teal-d:#0b6b6d;--tint:#e3f1f2;--line:#dde3ec;--serif:Fraunces,Georgia,"Times New Roman",serif;--sans:Manrope,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box}
+html{background:var(--ink);scroll-behavior:smooth;scroll-padding-top:calc(76px + env(safe-area-inset-top,0px))}
+body{margin:0;background:var(--paper);color:var(--text);font:16px/1.7 var(--sans)}
+a{color:var(--teal-d);text-decoration:none}
+a:focus-visible,button:focus-visible{outline:3px solid #7dd3d5;outline-offset:3px;border-radius:6px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.15;margin:0;color:var(--ink)}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:rgba(15,31,51,.92);backdrop-filter:blur(10px)}
+nav{position:relative;display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font-family:var(--serif);font-size:20px;color:#fff;font-weight:600}
+.links{display:flex;gap:26px}
+.links a{color:#c3cfdd;font-size:15px;font-weight:500}
+.links a:hover{color:#fff}
+#burger{display:none;border:1px solid #2c4560;background:transparent;color:#fff;border-radius:10px;width:42px;height:40px;cursor:pointer;padding:0;align-items:center;justify-content:center;flex-direction:column;gap:5px}
+#burger span{display:block;width:18px;height:2px;background:currentColor;border-radius:2px;transition:transform .3s,opacity .3s}
+#burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+#burger.open span:nth-child(2){opacity:0}
+#burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+/* hero */
+.hero{position:relative;background:var(--ink);color:#fff;overflow:hidden;padding:84px 0 92px}
+.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px);background-size:48px 48px;-webkit-mask-image:radial-gradient(ellipse at 70% 30%,#000 10%,transparent 72%);mask-image:radial-gradient(ellipse at 70% 30%,#000 10%,transparent 72%)}
+.hero::after{content:"";position:absolute;width:560px;height:560px;right:-140px;top:-180px;background:radial-gradient(circle,rgba(15,139,141,.55),transparent 65%)}
+.hero .wrap{position:relative;z-index:1;display:grid;grid-template-columns:1.25fr 1fr;gap:56px;align-items:center}
+.hero h1{color:#fff;font-size:clamp(40px,6.2vw,68px);letter-spacing:-.02em}
+.hero .role{font-size:clamp(18px,2.4vw,22px);color:#9fe0e1;margin:16px 0 14px;font-weight:600}
+.hero .sum{color:#c3cfdd;font-size:18px;max-width:520px;margin:0}
+.btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+.btn{padding:12px 24px;border-radius:8px;font-weight:700;font-size:15px;border:1.5px solid #3b5775;color:#fff;transition:background .2s,border-color .2s}
+.btn:hover{border-color:#9fe0e1}
+.btn.p{background:var(--teal);border-color:var(--teal)}
+.btn.p:hover{background:#12a0a2}
+.sheet{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:14px;padding:8px 24px;backdrop-filter:blur(6px)}
+.sheet dl{margin:0}
+.sheet div{display:grid;grid-template-columns:104px 1fr;gap:12px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.1)}
+.sheet div:last-child{border:0}
+.sheet dt{color:#8aa0b6;font-size:14px}
+.sheet dd{margin:0;color:#fff;font-weight:600;font-size:15px}
+.in{opacity:0;transform:translateY(18px);animation:up .8s cubic-bezier(.2,.7,.2,1) forwards}
+.in:nth-child(2){animation-delay:.12s}.in:nth-child(3){animation-delay:.24s}.in:nth-child(4){animation-delay:.36s}
+@keyframes up{to{opacity:1;transform:none}}
+/* sections */
+section{padding:84px 0}
+.alt{background:var(--white)}
+.head{max-width:640px;margin-bottom:40px}
+.head h2{font-size:clamp(28px,4vw,38px);margin-bottom:10px}
+.head p{margin:0;color:var(--muted)}
+.about{display:grid;grid-template-columns:1.3fr 1fr;gap:56px}
+.about p{margin:0 0 16px;color:var(--muted);font-size:17px}
+.checks{list-style:none;margin:0;padding:26px 28px;background:var(--tint);border-radius:14px}
+.checks h3{font-size:20px;margin-bottom:12px}
+.checks li{padding:8px 0 8px 28px;position:relative;font-weight:600;font-size:15px;color:var(--ink)}
+.checks li::before{content:"";position:absolute;left:2px;top:15px;width:12px;height:7px;border-left:2.5px solid var(--teal);border-bottom:2.5px solid var(--teal);transform:rotate(-45deg)}
+.checks h3+li{border-top:0}
+.skill{display:grid;grid-template-columns:220px 1fr;gap:24px;padding:22px 0;border-top:1px solid var(--line)}
+.skill:last-child{border-bottom:1px solid var(--line)}
+.skill h3{font-family:var(--sans);font-size:16px;font-weight:700}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{padding:6px 14px;border-radius:999px;background:var(--white);border:1px solid var(--line);font-size:14px;font-weight:600;color:var(--ink2)}
+.alt .chip{background:var(--paper)}
+/* timeline */
+.tl{border-left:2px solid var(--line);margin-left:6px}
+.job{position:relative;padding:0 0 44px 36px}
+.job:last-child{padding-bottom:0}
+.job::before{content:"";position:absolute;left:-8px;top:6px;width:14px;height:14px;border-radius:50%;background:var(--teal);box-shadow:0 0 0 5px var(--paper)}
+.alt .job::before{box-shadow:0 0 0 5px var(--white)}
+.when{display:inline-block;font-size:14px;font-weight:700;color:var(--teal-d);background:var(--tint);padding:3px 12px;border-radius:999px}
+.job h3{font-size:24px;margin:10px 0 2px}
+.co{color:var(--muted);margin:0 0 14px;font-weight:600}
+.job ul{margin:0;padding-left:20px;color:var(--muted)}
+.job li{margin-bottom:6px}
+.key{margin:16px 0 0;padding:14px 18px;border-left:3px solid var(--teal);background:var(--white);border-radius:0 10px 10px 0;font-size:15px;color:var(--ink)}
+.alt .key{background:var(--paper)}
+/* projects */
+.pgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+.proj{display:flex;flex-direction:column;background:var(--white);border:1px solid var(--line);border-radius:14px;overflow:hidden;transition:border-color .2s,transform .2s}
+.proj:hover{border-color:var(--teal);transform:translateY(-3px)}
+.proj .bar{height:8px;background:linear-gradient(90deg,var(--ink2),var(--teal))}
+.proj .in-{padding:26px;display:flex;flex-direction:column;flex:1}
+.proj h3{font-size:22px;margin-bottom:8px}
+.proj p{margin:0 0 16px;color:var(--muted);font-size:15px}
+.proj .chips{margin-top:auto;margin-bottom:18px}
+.proj .chip{font-size:13px;padding:4px 11px;background:var(--paper)}
+.proj .go{font-weight:700;font-size:15px}
+.proj .go:hover{text-decoration:underline}
+.proj.wide{grid-column:1/-1}
+/* education */
+.egrid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:28px}
+.card h3{font-size:21px;margin-bottom:6px}
+.card .meta{color:var(--teal-d);font-weight:700;font-size:14px;margin-bottom:10px;display:block}
+.card p{margin:0;color:var(--muted);font-size:15px}
+.card li{margin-bottom:12px;color:var(--muted);font-size:15px}
+.card ul{margin:0;padding-left:18px}
+.card b{color:var(--ink)}
+/* contact */
+.contact{background:var(--ink);color:#fff;position:relative;overflow:hidden}
+.contact::after{content:"";position:absolute;width:480px;height:480px;left:-160px;bottom:-240px;background:radial-gradient(circle,rgba(15,139,141,.4),transparent 65%)}
+.contact .wrap{position:relative;z-index:1;display:grid;grid-template-columns:1fr 1.1fr;gap:56px;align-items:center}
+.contact h2{color:#fff;font-size:clamp(30px,4.4vw,44px)}
+.contact p{color:#c3cfdd;margin:14px 0 0;font-size:17px}
+.clist{display:grid;gap:12px}
+.clist a,.clist div{display:grid;grid-template-columns:96px 1fr;gap:12px;padding:16px 20px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:12px;color:#fff;font-weight:600;word-break:break-word;transition:border-color .2s,background .2s}
+.clist a:hover{border-color:#9fe0e1;background:rgba(255,255,255,.1)}
+.clist span{color:#8aa0b6;font-weight:500}
+footer{background:#0a1626;color:#8aa0b6;text-align:center;padding:22px 0;font-size:14px}
+@media (prefers-reduced-motion:reduce){.in{opacity:1;transform:none;animation:none}html{scroll-behavior:auto}.proj,.btn{transition:none}}
+@media (max-width:860px){
+#burger{display:flex}
+.links{position:absolute;left:-24px;right:-24px;top:100%;flex-direction:column;gap:0;background:var(--ink);border-top:1px solid #20374f;box-shadow:0 14px 28px rgba(0,0,0,.3);max-height:0;overflow:hidden;visibility:hidden;transition:max-height .35s ease,visibility .35s}
+.links.open{max-height:380px;visibility:visible}
+.links a{padding:15px 24px;font-size:16px;border-bottom:1px solid #1b3249}
+.hero{padding:52px 0 60px}
+.hero .wrap,.about,.contact .wrap,.egrid,.pgrid{grid-template-columns:1fr}
+.hero .wrap,.about,.contact .wrap{gap:36px}
+.skill{grid-template-columns:1fr;gap:12px}
+section{padding:58px 0}
+.wrap{padding:0 18px}
+.links{left:-18px;right:-18px}
+.btns .btn{flex:1;text-align:center}
+.job{padding-left:26px}
+.clist a,.clist div{grid-template-columns:82px 1fr}
+}
+</style>
+</head>
+<body>
+<header><div class="wrap"><nav>
+<a class="logo" href="#top">Saijeevan T.</a>
+<div class="links" id="menu"><a href="#about">About</a><a href="#skills">Skills</a><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#education">Education</a><a href="#contact">Contact</a></div>
+<button id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="menu"><span></span><span></span><span></span></button>
+</nav></div></header>
+
+<main>
+<section class="hero" id="top"><div class="wrap">
+<div>
+<h1 class="in">Saijeevan Thondamanati</h1>
+<p class="role in">Web Developer · Frontend Developer · WordPress Developer</p>
+<p class="sum in">I build responsive, high-performance websites and manage production servers, with 3+ years of experience.</p>
+<div class="btns in"><a class="btn p" href="#projects">View projects</a><a class="btn" href="#contact">Contact me</a></div>
+</div>
+<div class="sheet in"><dl>
+<div><dt>Location</dt><dd>Bangalore, India</dd></div>
+<div><dt>Experience</dt><dd>3+ years in web development</dd></div>
+<div><dt>Core stack</dt><dd>HTML5, CSS3, JavaScript, React.js, WordPress, PHP, MySQL</dd></div>
+<div><dt>Focus</dt><dd>Responsive design, performance optimization, testing</dd></div>
+<div><dt>Education</dt><dd>B.Tech, Electronics &amp; Communication (Distinction)</dd></div>
+</dl></div>
+</div></section>
+
+<section class="alt" id="about"><div class="wrap">
+<div class="head"><h2>About me</h2></div>
+<div class="about">
+<div>
+<p>I'm a results-driven web developer based in Bangalore with 3+ years of experience building responsive, high-performance websites and maintaining enterprise sites. I work with HTML, CSS, JavaScript, WordPress, PHP and MySQL to deliver scalable web solutions.</p>
+<p>My focus is UI development, responsive design, performance optimization and application testing. I work with cross-functional teams to deliver secure, efficient and user-friendly digital platforms.</p>
+</div>
+<ul class="checks"><h3>Strengths</h3>
+<li>Responsive website development</li><li>Website performance optimization</li><li>Web application testing</li><li>Server and hosting management</li><li>Cross-browser compatibility</li></ul>
+</div></div></section>
+
+<section id="skills"><div class="wrap">
+<div class="head"><h2>Skills</h2><p>Tools and technologies I use day to day.</p></div>
+<div>
+<div class="skill"><h3>Frontend development</h3><div class="chips"><span class="chip">HTML5</span><span class="chip">CSS3</span><span class="chip">Bootstrap</span><span class="chip">JavaScript</span><span class="chip">React.js</span></div></div>
+<div class="skill"><h3>Backend development</h3><div class="chips"><span class="chip">PHP</span><span class="chip">MySQL</span></div></div>
+<div class="skill"><h3>CMS and platforms</h3><div class="chips"><span class="chip">WordPress</span><span class="chip">Salesforce CRM</span></div></div>
+<div class="skill"><h3>Testing and QA</h3><div class="chips"><span class="chip">API testing</span><span class="chip">Functional testing</span><span class="chip">Unit testing</span><span class="chip">Mobile app testing</span></div></div>
+<div class="skill"><h3>Tools and technologies</h3><div class="chips"><span class="chip">Adobe Photoshop</span><span class="chip">Microsoft Azure</span></div></div>
+<div class="skill"><h3>Other skills</h3><div class="chips"><span class="chip">Responsive web design</span><span class="chip">Website optimization</span><span class="chip">Server management</span><span class="chip">UI implementation</span></div></div>
+</div></div></section>
+
+<section class="alt" id="experience"><div class="wrap">
+<div class="head"><h2>Work experience</h2></div>
+<div class="tl">
+<div class="job"><span class="when">Aug 2023 – Feb 2025</span><h3>Web Developer</h3><p class="co">Suits Care India Pvt Ltd, Guntur</p>
+<ul><li>Developed and maintained responsive websites and web applications using HTML, CSS, JavaScript and WordPress.</li><li>Managed website hosting, server configurations and WordPress dashboards for multiple internal projects.</li><li>Implemented mobile-first responsive design that improved accessibility across devices.</li><li>Tested and validated internal dashboards and mobile applications to keep systems stable.</li><li>Optimized performance through code improvements, caching strategies and security enhancements.</li><li>Worked with design and development teams on UI enhancements and new features.</li></ul>
+<p class="key"><b>Key contributions:</b> Maintained multiple production websites and internal systems. Improved website performance and usability through optimization techniques.</p></div>
+<div class="job"><span class="when">Apr 2022 – Jul 2023</span><h3>Software Developer</h3><p class="co">Sagar Software Solutions Pvt Ltd, Tirupati</p>
+<ul><li>Developed landing pages and dynamic websites using HTML, CSS, JavaScript and Bootstrap.</li><li>Helped implement UI/UX designs and responsive layouts for client websites.</li><li>Took part in testing, debugging and deployment of web applications.</li><li>Worked closely with designers and developers to deliver interactive, visually engaging pages.</li></ul>
+<p class="key"><b>Key contributions:</b> Contributed to the development and deployment of multiple responsive client websites.</p></div>
+</div></div></section>
+
+<section id="projects"><div class="wrap">
+<div class="head"><h2>Projects</h2><p>Live websites I have built and maintained.</p></div>
+<div class="pgrid">
+<article class="proj wide"><div class="bar"></div><div class="in-"><h3>Suits Care Network</h3><p>Internal project websites with managed WordPress servers and dashboards, plus mobile application and dashboard testing.</p><div class="chips"><span class="chip">WordPress</span><span class="chip">Server management</span><span class="chip">Mobile app testing</span></div><a class="go" href="https://suits.life/" target="_blank" rel="noopener">Visit suits.life ↗</a></div></article>
+<article class="proj"><div class="bar"></div><div class="in-"><h3>DKSSR Portfolio Website</h3><p>A responsive portfolio website with layout improvements and feature updates.</p><div class="chips"><span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">JavaScript</span></div><a class="go" href="https://drkssr.com/" target="_blank" rel="noopener">Visit drkssr.com ↗</a></div></article>
+<article class="proj"><div class="bar"></div><div class="in-"><h3>SaveYO Platform</h3><p>A multi-page responsive website designed to support blood donation awareness and requirements.</p><div class="chips"><span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">Bootstrap</span><span class="chip">JavaScript</span></div><a class="go" href="https://saveyo.org/" target="_blank" rel="noopener">Visit saveyo.org ↗</a></div></article>
+<article class="proj"><div class="bar"></div><div class="in-"><h3>In Case of Emergency Website</h3><p>A WordPress landing page built with Elementor within 10 days, fully mobile responsive.</p><div class="chips"><span class="chip">WordPress</span><span class="chip">Elementor</span><span class="chip">Responsive</span></div><a class="go" href="https://ice.suits.life/" target="_blank" rel="noopener">Visit ice.suits.life ↗</a></div></article>
+<article class="proj"><div class="bar"></div><div class="in-"><h3>Intensive Diabetic Care Website</h3><p>A responsive healthcare website aligned with client requirements.</p><div class="chips"><span class="chip">Healthcare</span><span class="chip">Responsive</span></div><a class="go" href="http://idc.suits.life/" target="_blank" rel="noopener">Visit idc.suits.life ↗</a></div></article>
+<article class="proj"><div class="bar"></div><div class="in-"><h3>New Elite Hospitals</h3><p>Exclusive care for elite people. A Suits Care venture launched in 2022.</p><div class="chips"><span class="chip">Healthcare</span><span class="chip">Website</span></div><a class="go" href="https://www.newelite.life" target="_blank" rel="noopener">Visit newelite.life ↗</a></div></article>
+<article class="proj"><div class="bar"></div><div class="in-"><h3>New Elite Home Care</h3><p>Home healthcare services for the elite group. A Suits Care venture launched in 2022.</p><div class="chips"><span class="chip">Healthcare</span><span class="chip">Website</span></div><a class="go" href="https://www.newelite.life" target="_blank" rel="noopener">Visit newelite.life ↗</a></div></article>
+</div></div></section>
+
+<section class="alt" id="education"><div class="wrap">
+<div class="head"><h2>Education and training</h2></div>
+<div class="egrid">
+<div class="card"><span class="meta">2015 – 2019</span><h3>B.Tech, Electronics &amp; Communication Engineering</h3><p>Srikalahasteeswara Institute of Technology (SKIT), JNTU Ananthapur. Graduated with Distinction, 70%.</p></div>
+<div class="card"><span class="meta">Trainings</span><ul><li><b>Identity &amp; Access Management (IDAM)</b>, WinGig IT Consulting Services, 2025. SailPoint IIQ, Saviynt IGA and Oracle Identity Management Suite.</li><li><b>Salesforce CRM</b>, E-Care Technologies, Bangalore, 2019.</li></ul></div>
+</div></div></section>
+
+<section class="contact" id="contact"><div class="wrap">
+<div><h2>Contact</h2><p>Reach me by email, phone or on the profiles below.</p></div>
+<div class="clist">
+<a href="mailto:saijeevant@gmail.com"><span>Email</span>saijeevant@gmail.com</a>
+<a href="tel:+917989770461"><span>Phone</span>+91 7989770461</a>
+<a href="https://www.linkedin.com/in/saijeevan-thondamanati-737399195" target="_blank" rel="noopener"><span>LinkedIn</span>saijeevan-thondamanati</a>
+<a href="https://github.com/Saijeevan20" target="_blank" rel="noopener"><span>GitHub</span>Saijeevan20</a>
+<div><span>Location</span>Bangalore, India</div>
+</div>
+</div></section>
+</main>
+<footer>© <span id="y"></span> Saijeevan Thondamanati</footer>
+
+<script>
+(function(){
+var bg=document.getElementById('burger'),mn=document.getElementById('menu');
+function tog(o){mn.classList.toggle('open',o);bg.classList.toggle('open',o);bg.setAttribute('aria-expanded',o);bg.setAttribute('aria-label',o?'Close menu':'Open menu')}
+bg.onclick=function(){tog(!mn.classList.contains('open'))};
+mn.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){tog(false)})});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')tog(false)});
+document.addEventListener('click',function(e){if(!e.target.closest('header'))tog(false)});
+addEventListener('resize',function(){if(innerWidth>860)tog(false)});
+document.getElementById('y').textContent=new Date().getFullYear();
+})();
+</script>
+</body>
+</html>
